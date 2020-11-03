@@ -22,9 +22,13 @@ along with this program; If not, see <http://www.gnu.org/licenses/>.
 
 class PPP
 {
+  private:
+    std::ifstream readfile;
+    std::stringstream ouput;
+  
   public:
-    PPP(ifstream read_file)
+    PPP(std::ifstream read_file)
     {
-      //some shit here
+      this->readfile = read_file;
     }
 };
