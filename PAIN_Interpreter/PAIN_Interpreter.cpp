@@ -21,12 +21,17 @@ along with this program; If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <fstream>
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) //I would like to note that I chose C++ as the language for this interpeter because evil is most pure from evil roots
 {
-	if (argc > 2)
+	if (argc > 2) //This is the current argument handler
 	{
 		std::out << "More arguments given then needed. All we need is the file name, and the interpreter takes care of the rest ;)" << std::endl;
 		return 0;
 	}
-	
+	ifstream mainFile; //opening the first file for reading
+	mainFile.open(argv[1]);
+	if(mainFile.is_open())
+	{
+		//preprocessing here
+	} else std::out << "The file couldn't open so good fkn luck m8" << std::endl;
 }
