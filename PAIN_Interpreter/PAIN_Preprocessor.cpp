@@ -13,6 +13,18 @@ You should have received a copy of the GNU General Public License
 along with this program; If not, see <http://www.gnu.org/licenses/>.
 ********************************/
 #include <sstream>
+#include <fstream>
+#include <iostream>
+#include "PAIN_Preprocessor.hpp"
 
 //im trying to figure out how to put all the files together into one long string which can be read
 //I've decided that the file import string will be "@BRING_IN_ANOTHER_PERSONS_CODE [filename]". the @ symbol will denote a preprocessor directive, but not always.
+
+class PPP
+{
+  public:
+    PPP(ifstream read_file)
+    {
+      //some shit here
+    }
+};
