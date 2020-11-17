@@ -24,11 +24,32 @@ class PPP
 {
   private:
     std::ifstream readfile;
-    std::stringstream ouput;
+    std::stringstream output;
   
   public:
     PPP(std::ifstream read_file)
     {
       this->readfile = read_file;
+      this->output = new std::stringstream;
+    }
+  
+    void preproc()
+    {
+      while (this->readfile.peek() != EOF)
+      {
+        
+        if (this->readfile.peek() == "@")
+        {
+          char* check_string = (char*)malloc(30);
+          this->readfile.read(check_string, 30);
+          if (*check_string == "@BRING_IN_ANOTHER_PERSONS_CODE")
+          {
+            
+          }
+        } else {
+          this->output << this->readfile.getline();
+          if (!this->readfile.bad() && !this->readfile.fail() && !this->readfile.eof()) this->output << "\n";
+        }
+      }
     }
 };
